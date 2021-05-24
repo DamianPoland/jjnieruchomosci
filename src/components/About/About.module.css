@@ -1,0 +1,98 @@
+.background {
+    background: white;
+    color: black;
+}
+
+.text__desc {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-top: 1rem;
+    text-align: justify;
+    color: black;
+}
+
+.text__white {
+    color: white;
+}
+
+.text__bigLeter {
+    font-size: 200%;
+    line-height: 2rem;
+}
+
+.figure__img {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* section WHO */
+
+.who {
+    background-color: white;
+}
+
+.who__container {
+    max-width: 1920px;
+    margin: 0 auto 0 auto;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.who__text {
+    flex: 1;
+}
+
+.who__textContainer {
+    max-width: 800px;
+    margin-right: auto;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* section WHY */
+
+.why {
+    background-color: white;
+
+}
+
+.why__container {
+    max-width: 1920px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why__text {
+    flex: 1;
+}
+
+.why__textContainer {
+    max-width: 800px;
+    margin-left: auto;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* MEDIA */
+
+@media (min-width: 800px) {
+    .who__container {
+        flex-direction: row;
+    }
+
+    .why__container {
+        flex-direction: row;
+    }
+}

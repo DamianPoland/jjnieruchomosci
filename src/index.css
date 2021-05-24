@@ -1,0 +1,114 @@
+/* basic */
+
+*,
+*:before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  /* colors */
+  --accent: 235, 187, 0;
+  /* #f5c500 */
+
+  --dark: 30, 30, 30;
+  /* #1e1e1e */
+
+
+}
+
+html,
+body {
+  font-size: 100%;
+  overflow-x: hidden;
+  color: black;
+
+  /* scrollbar ONLY for mozilla, scrollbar-width - "auto" or "thin"  */
+  scrollbar-width: thin;
+  scrollbar-color: green black;
+}
+
+/* custom scroll bar in body (mobile not work) */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent), 0.6);
+  border-radius: 999px;
+}
+
+
+
+
+/* ALL */
+
+.text1 {
+  letter-spacing: 1.2px;
+  font-size: 1.5rem;
+  color: rgb(var(--accent));
+  font-family: "Kalam", cursive;
+  font-weight: 600;
+}
+
+.text2 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 1rem;
+  text-align: justify;
+  color: black;
+  font-weight: normal;
+}
+
+.text__white {
+  color: white;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.line {
+  padding-top: 0.3rem;
+  background: rgb(var(--accent));
+  width: 5rem;
+}
+
+.btn {
+  background: transparent;
+  border: solid 0.2rem rgba(var(--accent), 0.6);
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.btn:active {
+  background: rgba(var(--accent), 0.6);
+}
+
+.text__white {
+  color: white;
+}
+
+.text__shadow {
+  text-shadow: 1px 2px rgba(0, 0, 0, 1);
+}
+
+@media (min-width: 500px) {
+
+  .text1 {
+    font-size: 2.5rem;
+  }
+}

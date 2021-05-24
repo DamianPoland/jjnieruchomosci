@@ -1,0 +1,340 @@
+.section {
+    background: rgb(var(--bright));
+    padding: 8rem 0 8rem 0;
+}
+
+.section__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* section CONTACTS */
+
+.contacts {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.contacts__container {
+    background: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem 4rem 1rem;
+}
+
+.contacts__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.contacts .contacts__item:nth-child(1) {
+    animation: shiftFromLeft .8s 0s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(2) {
+    animation: shiftFromLeft .8s .25s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(3) {
+    animation: shiftFromLeft .8s .5s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(4) {
+    animation: shiftFromLeft .8s .75s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(5) {
+    animation: shiftFromLeft .8s 1s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(6) {
+    animation: shiftFromLeft .8s 1.25s ease-out both;
+}
+
+.contacts .contacts__item:nth-child(7) {
+    animation: shiftFromLeft .8s 1.5s ease-out both;
+}
+
+@keyframes shiftFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.svg {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: rgb(var(--accent));
+}
+
+.svg:active {
+    transform: scale(1.1);
+}
+
+.contacts__desc {
+    width: 100%;
+    padding: 1rem;
+    color: black;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+
+
+/* START of form */
+
+.form {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    position: relative;
+}
+
+.form__container {
+    position: relative;
+    width: 100%;
+    padding: 4rem 1rem 0 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 4rem;
+    align-self: center;
+    background-color: rgba(0, 0, 0, .1);
+    border: 2px transparent solid;
+    color: black;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+/* custom scroll bar in textarea */
+textarea::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+textarea::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent), 0.5);
+    border-radius: 999px;
+}
+
+.inputIsInvalid {
+    border: red 1px solid;
+}
+
+.label {
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: rgb(30, 30, 30);
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: 0.5s ease;
+}
+
+
+.isValid {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    color: red;
+    font-size: 0.8rem;
+}
+
+.input:focus+.label,
+.input:required:valid+.label {
+    /* to work in htmml must be required:true*/
+    display: flex;
+    transform: scale(0.7) translate(-1rem, -4rem);
+    color: rgb(var(--accent));
+}
+
+.input:focus {
+    border: rgb(var(--accent)) solid;
+    border-width: 0 .3rem 0 .3rem;
+}
+
+/* Change background and color if input is autocompleate ;) */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 9999s ease-in-out 0s;
+}
+
+.input::placeholder {
+    color: rgb(190, 190, 190);
+}
+
+.btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 2px solid rgb(var(--accent));
+    color: black;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: rgba(var(--accent), 0.4);
+}
+
+.btn:active {
+    background-color: rgba(var(--accent), 0.8);
+    box-shadow: 0 0 40px rgba(var(--accent), 0.8);
+    color: white;
+}
+
+.formAnim {
+    animation: formAnimation 4s ease-in forwards;
+}
+
+@keyframes formAnimation {
+    25% {
+        transform: scale(0, 0);
+        opacity: 0;
+    }
+
+    75% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+}
+
+.envelope {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 0);
+}
+
+.envelopeAnim {
+    animation: envelopeAnimation 4s 0.5s ease-in forwards;
+}
+
+@keyframes envelopeAnimation {
+    25% {
+        transform: scale(0.2, 0.2) translateX(0) rotate(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.2, 0.2) translateX(0) rotate(0);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.2, 0.2) translateX(1000%) rotate(720deg);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.svgOkId {
+    opacity: 0;
+}
+
+.svgOkIdAnim {
+    animation: envelopeSvgOkIdAnimation 4s 0.5s ease-in;
+}
+
+@keyframes envelopeSvgOkIdAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+/* END of form */
+
+@media (min-width: 500px) {
+
+    .contacts__item {
+        flex-direction: row;
+    }
+
+    .contacts__desc {
+        text-align: start;
+    }
+
+    .svg {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .contacts__desc {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .section__container {
+        flex-direction: row;
+    }
+
+    .contacts {
+        align-self: flex-start;
+    }
+}
