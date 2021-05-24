@@ -38,17 +38,17 @@ const Footer = () => {
 
                         <div className={style.desc__contact}>
 
-                            <a href='tel:+48883305348' className={style.desc__contactItem}>
+                            <a href='tel:+48513101116' className={style.desc__contactItem}>
                                 <Phone className={style.desc__contactItemSvg} />
                                 <p className={style.desc__contactItemText}>Telefon</p>
                             </a>
 
-                            <a href={`http://maps.google.com/?q=Reda Garncarska 11/c37`} target='_blank' rel="noopener noreferrer" className={style.desc__contactItem}>
+                            <a href={`http://maps.google.com/?q=Gdynia, Szefki 13E/3`} target='_blank' rel="noopener noreferrer" className={style.desc__contactItem}>
                                 <Location className={style.desc__contactItemSvg} />
                                 <p className={style.desc__contactItemText}>Mapa</p>
                             </a>
 
-                            <a href='mailto:biuro@stronabhp.pl?subject=Zapytanie' className={style.desc__contactItem}>
+                            <a href='mailto:biuro@jjnieruchomosci.com?subject=Zapytanie' className={style.desc__contactItem}>
                                 <Email className={style.desc__contactItemSvg} />
                                 <p className={style.desc__contactItemText}>Email</p>
                             </a>

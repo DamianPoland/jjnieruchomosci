@@ -37,6 +37,7 @@
 
 .start__containerText {
     background: rgba(30, 30, 30, 0.9);
+    background: rgb(var(--accent));
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     padding: 3rem 1rem;
-    clip-path: polygon(0 0, 50% 20%, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    border-radius: 999px;
 }
 
 .start__text {
@@ -56,7 +57,7 @@
 }
 
 .start__textMiddle {
-    color: rgb(var(--accent));
+    color: black;
 
     /* text animation */
     overflow: hidden;
@@ -197,21 +198,21 @@
 }
 
 
-/*section NEWS*/
+/*section WHY*/
 
-.news {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)100%), url(../../assets/home_news_background.jpg) center center no-repeat;
+.why {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5)100%), url(../../assets/home_why_background.jpg) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
-    .news {
+    .why {
         background-attachment: scroll;
     }
 }
 
-.news__container {
+.why__container {
     max-width: 1200px;
     margin: auto;
     padding: 2rem 1rem;
@@ -220,7 +221,7 @@
     position: relative;
 }
 
-.news__textContainer {
+.why__textContainer {
     background: rgba(255, 255, 255, 0.9);
     max-width: 600px;
     margin: auto;
@@ -231,22 +232,35 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-.news__figure1 {
+.why__figure1 {
     max-width: 300px;
     transform: translateY(2rem);
 }
 
-.news__figure2 {
+.why__figure2 {
     max-width: 300px;
     transform: translateY(-2rem);
     justify-self: end;
 }
 
-.news__img {
+.why__img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: contain;
+}
+
+.why__ul {
+    padding: 1rem;
+    list-style-image: url("../../assets/check.png")
+}
+
+.why__li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5rem 0;
+    color: black;
+    font-weight: normal;
 }
 
 
@@ -340,30 +354,26 @@
 
 @media (min-width: 500px) {
 
-    .start__containerText {
-        padding: 4rem 2rem;
-    }
-
     .start__text {
         font-size: 2rem;
         padding: 0.5rem;
     }
 
-    .news__container {
+    .why__container {
         padding: 0 1rem;
     }
 
-    .news__textContainer {
+    .why__textContainer {
         padding: 2rem;
     }
 
-    .news__figure1 {
+    .why__figure1 {
         max-width: 500px;
         transform: translateY(4rem);
 
     }
 
-    .news__figure2 {
+    .why__figure2 {
         max-width: 500px;
         transform: translateY(-4rem);
     }
@@ -380,11 +390,6 @@
 
     .start__container {
         flex-direction: row;
-    }
-
-    .start__containerText {
-        padding: 2rem 6rem;
-        clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%, 20% 50%);
     }
 
     .start__text {

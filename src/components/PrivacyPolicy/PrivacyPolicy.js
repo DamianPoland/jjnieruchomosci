@@ -20,14 +20,16 @@ const PrivacyPolicy = () => {
                 <div>
                     <h2><strong className={style.font}>1. Informacje ogólne</strong></h2>
                     <ol>
-                        <li>Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: <b>StronaBHP.pl</b></li>
-                        <li>Operatorem serwisu oraz Administratorem danych osobowych jest: StronaBHP ul. Garncarska 11/c37, 84-240 Reda</li>
+                        <li>Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: <b>jjnieruchomosci.com</b></li>
+                        <li>Operatorem serwisu oraz Administratorem danych osobowych jest: jjnieruchomosci.com Gdynia, ul. Szefki 13E/3</li>
 
-                        <li>Adres kontaktowy poczty elektronicznej operatora: biuro@StronaBHP.pl</li>
+                        <li>Adres kontaktowy poczty elektronicznej operatora: biuro@jjnieruchomosci.com</li>
 
                         <li>Operator jest Administratorem Twoich danych osobowych w odniesieniu do danych podanych dobrowolnie w Serwisie.</li>
                         <li>Serwis wykorzystuje dane osobowe w następujących celach:</li>
-                        <ul><li>Prowadzenie newslettera</li><li>Obsługa zapytań przez formularz</li><li>Realizacja zamówionych usług</li><li>Prezentacja oferty lub informacji</li>
+                        <ul>
+                            <li>Realizacja zamówionych usług</li>
+                            <li>Prezentacja oferty lub informacji</li>
                         </ul>
                         <li>Serwis realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowaniu w następujący sposób:
 	                                <ol>
@@ -41,7 +43,7 @@ const PrivacyPolicy = () => {
                     </ol>
                     <h2><strong className={style.font}>3. Hosting</strong></h2>
                     <ol>
-                        <li>Serwis jest hostowany (technicznie utrzymywany) na serwera operatora: GCP.</li>
+                        <li>Serwis jest hostowany (technicznie utrzymywany) na serwera operatora: OVH.</li>
                     </ol>
                     <h2><strong className={style.font}>4. Twoje prawa i dodatkowe informacje o sposobie wykorzystania danych</strong></h2>
                     <ol><li>W niektórych sytuacjach Administrator ma prawo przekazywać Twoje dane osobowe innym odbiorcom, jeśli będzie to niezbędne do wykonania zawartej z Tobą umowy lub do zrealizowania obowiązków ciążących na Administratorze. Dotyczy to takich grup odbiorców:<ul><li>firma hostingowa na zasadzie powierzenia</li></ul></li>

@@ -8,8 +8,8 @@ import home__start1 from '../../assets/home__start1.jpg'
 import home__start2 from '../../assets/home__start2.jpg'
 import home__about from '../../assets/home__about.jpg'
 import home__offer from '../../assets/home__offer.jpg'
-import home__news1 from '../../assets/home__news1.jpg'
-import home__news2 from '../../assets/home__news2.jpg'
+import home__why1 from '../../assets/home__why1.jpg'
+import home__why2 from '../../assets/home__why2.jpg'
 import home__contact from '../../assets/home__contact.jpg'
 
 // svg
@@ -111,25 +111,25 @@ const Home = () => {
                 </div>
             </section>
 
-            {/*section NEWS*/}
-            <section className={style.news}>
-                <div className={style.news__container}>
-                    <figure className={style.news__figure1}>
-                        <img className={style.news__img} src={home__news1} alt="bhp" />
+            {/*section WHY*/}
+            <section className={style.why}>
+                <div className={style.why__container}>
+                    <figure className={style.why__figure1}>
+                        <img className={style.why__img} src={home__why1} alt="bhp" />
                     </figure>
-                    <div data-aos="flip-left" className={style.news__textContainer}>
+                    <div data-aos="flip-left" className={style.why__textContainer}>
                         <h1 className="text1">Dlaczego ja?</h1>
                         <div className="line"></div>
-                        <ul className="text2">
-                            <li>Znam trójmiejski rynek nieruchomości.</li>
-                            <li>Posiadam wiedzę z zakresu prawa mieszkaniowego.</li>
-                            <li>Oferuję komfort i bezpieczeństwo transakcji.</li>
-                            <li>Do każdego klienta podchodzę indywidualnie.</li>
-                            <li>Mam wieloletnie doświadczenie zarówno w sprzedaży jak i wynajmie nieruchomości.</li>
+                        <ul className={style.why__ul}>
+                            <li className={style.why__li}>Znam trójmiejski rynek nieruchomości.</li>
+                            <li className={style.why__li}>Posiadam wiedzę z zakresu prawa mieszkaniowego.</li>
+                            <li className={style.why__li}>Oferuję komfort i bezpieczeństwo transakcji.</li>
+                            <li className={style.why__li}>Do każdego klienta podchodzę indywidualnie.</li>
+                            <li className={style.why__li}>Mam wieloletnie doświadczenie zarówno w sprzedaży jak i wynajmie nieruchomości.</li>
                         </ul>
                     </div>
-                    <figure className={style.news__figure2}>
-                        <img className={style.news__img} src={home__news2} alt="bhp" />
+                    <figure className={style.why__figure2}>
+                        <img className={style.why__img} src={home__why2} alt="bhp" />
                     </figure>
                 </div>
             </section>
@@ -141,12 +141,12 @@ const Home = () => {
                     <div className={style.contact__textContainer}>
                         <h1 className="text1">Chcesz nawiązać współpracę?</h1>
                         <div className="line"></div>
-                        <p className="text2">Skontaktuj się ze mną, a chętnie udzielę Tobie odpowiedzi na wszystkie pytania. Chętnie przerowadzę Cię przez cały proces kupna lub sprzedaży nieruchomości.</p>
+                        <p className="text2">Skontaktuj się ze mną, a chętnie udzielę Tobie odpowiedzi na wszystkie pytania. Przerowadzę Cię przez cały proces kupna lub sprzedaży nieruchomości.</p>
 
                         <p className={style.contact__tel}>
-                            <a href='tel:+48100100100' className={style.contact__telIcon}>
+                            <a href='tel:+48513101116' className={style.contact__telIcon}>
                                 <Phone />
-                            </a> +48 100-100-100
+                            </a> +48 513-101-116
                             </p>
                         <div><Link to='/contact' className="btn">Pozostałe formy kontaktu</Link></div>
                     </div>

@@ -35,7 +35,7 @@
 .headerDesc {
     padding-left: 10px;
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Kalam', cursive;
     font-weight: bold;
 }
@@ -148,7 +148,14 @@
 
 /* media query */
 
-@media (min-width: 1000px) {
+@media (min-width: 500px) {
+
+    .headerDesc {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 800px) {
 
     .burgerMenu {
         display: none;
