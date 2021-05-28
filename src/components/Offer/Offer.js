@@ -4,7 +4,9 @@ import style from './Offer.module.css'
 
 
 // images
-import home__about from '../../assets/home__about.jpg'
+import offer__sell from '../../assets/offer__sell.jpg'
+import offer__buy from '../../assets/offer__buy.jpg'
+import offer__rent from '../../assets/offer__rent.jpg'
 
 const Offer = () => {
 
@@ -21,7 +23,7 @@ const Offer = () => {
                 <div className={style.item}>
                     <div className={style.item__header}>
                         <figure className={style.item__figure}>
-                            <img className="img" src={home__about} alt="nieruchomość" />
+                            <img className="img" src={offer__sell} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
                             <h1 className="text1">Chcesz sprzedać?</h1>
@@ -50,7 +52,7 @@ const Offer = () => {
                 <div className={style.item}>
                     <div className={style.item__header}>
                         <figure className={style.item__figure}>
-                            <img className="img" src={home__about} alt="nieruchomość" />
+                            <img className="img" src={offer__buy} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
                             <h1 className="text1">Chcesz kupić?</h1>
@@ -72,7 +74,7 @@ const Offer = () => {
                 <div className={style.item}>
                     <div className={style.item__header}>
                         <figure className={style.item__figure}>
-                            <img className="img" src={home__about} alt="nieruchomość" />
+                            <img className="img" src={offer__rent} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
                             <h1 className="text1">Chcesz wynająć?</h1>

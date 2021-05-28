@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import style from './Contact.module.css'
 
 // images
-import home__contact from '../../assets/home__contact.jpg'
+import contact from '../../assets/contact.jpg'
 
 
 //svg
@@ -56,7 +56,7 @@ const Contact = () => {
 
                 {/* img */}
                 <figure data-aos="fade-left" className={style.contact__figure}>
-                    <img className={style.contact__img} src={home__contact} alt="bhp" />
+                    <img className={style.contact__img} src={contact} alt="bhp" />
                 </figure>
             </div>
         </main>
