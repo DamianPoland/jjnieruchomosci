@@ -66,12 +66,6 @@
     animation: typing 1.5s steps(18, end);
 }
 
-@supports (-webkit-overflow-scrolling: touch) {
-    .start__textMiddle {
-        color: rgb(var(--accent));
-    }
-}
-
 /* The typing effect */
 @keyframes typing {
     0% {
