@@ -72,7 +72,7 @@ const Home = () => {
                     <div data-aos="flip-left" className={style.approach__item}>
                         <Clients />
                         <h2 className={style.approach__h2}>Doświadczenie</h2>
-                        <p className={style.approach__p}>Profesjonalne podejście i kilkanastoletnie doświadczenie na rynku trójmiejskim. Wielu zadowolonych klientów.</p>
+                        <p className={style.approach__p}>Profesjonalne podejście i kilkunastoletnie doświadczenie na rynku trójmiejskim. Wielu zadowolonych klientów.</p>
                     </div>
                 </div>
             </section>
