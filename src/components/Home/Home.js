@@ -85,7 +85,7 @@ const Home = () => {
                 </figure>
                 <div className={style.about__text}>
                     <div className={style.about__textContainer}>
-                        <h1 className="text1">Kim jestem?</h1>
+                        <h1 className="text1">Kim jestem</h1>
                         <div className="line"></div>
                         <p className="text2 text__white">Jestem rodowitą gdańszczanką. Od 17 lat mieszkam w Gdyni. Ukończyłam w 2008 roku studia podyplomowe na Wyższej Szkole Gospodarowania Nieruchomościami na Politechnice Gdańskiej i uzyskałam licencję zawodową w zakresie pośrednictwa w obrocie nieruchomościami – nr 8998.</p>
                         <div><Link to='/about' className="btn text__white">Więcej o mnie</Link></div>
@@ -99,7 +99,7 @@ const Home = () => {
                 <div className={style.offer__container}>
                     <div className={style.offer__text}>
                         <div className={style.offer__textContainer}>
-                            <h1 className="text1">Czym się zajmuję?</h1>
+                            <h1 className="text1">Czym się zajmuję</h1>
                             <div className="line"></div>
                             <p className="text2">Oferuję usługi pośrednictwa w sprzedaży i zakupie domów, mieszkań i działek. Zajmuję się kompleksową obsługą umów, obsługą prawną, doradztwem oraz bezpieczeństwem transakcji.</p>
                             <div><Link to='/offer' className="btn">Pełna oferta</Link></div>
@@ -118,7 +118,7 @@ const Home = () => {
                         <img className={style.why__img} src={home__why1} alt="bhp" />
                     </figure>
                     <div data-aos="flip-left" className={style.why__textContainer}>
-                        <h1 className="text1">Dlaczego ja?</h1>
+                        <h1 className="text1">Dlaczego ja</h1>
                         <div className="line"></div>
                         <ul className={style.why__ul}>
                             <li className={style.why__li}>Znam trójmiejski rynek nieruchomości.</li>
@@ -139,7 +139,7 @@ const Home = () => {
             <section className={style.contact}>
                 <div className={style.contact__text}>
                     <div className={style.contact__textContainer}>
-                        <h1 className="text1">Chcesz nawiązać współpracę?</h1>
+                        <h1 className="text1">Chcesz nawiązać współpracę</h1>
                         <div className="line"></div>
                         <p className="text2">Skontaktuj się ze mną, a chętnie udzielę Tobie odpowiedzi na wszystkie pytania. Przerowadzę Cię przez cały proces kupna lub sprzedaży nieruchomości.</p>
 
@@ -147,7 +147,7 @@ const Home = () => {
                             <a href='tel:+48513101116' className={style.contact__telIcon}>
                                 <Phone />
                             </a> +48 513-101-116
-                            </p>
+                        </p>
                         <div><Link to='/contact' className="btn">Pozostałe formy kontaktu</Link></div>
                     </div>
                 </div>

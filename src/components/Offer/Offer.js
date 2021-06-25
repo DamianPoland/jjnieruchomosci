@@ -26,14 +26,14 @@ const Offer = () => {
                             <img className="img" src={offer__sell} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
-                            <h1 className="text1">Chcesz sprzedać?</h1>
+                            <h1 className="text1">Chcesz sprzedać</h1>
                             <div className="line"></div>
                         </div>
                     </div>
                     <ul className={style.item__ul}>
                         <li className={style.item__li}>oferujemy sesję zdjęciową, dzięki której oferta nieruchomości jest atrakcyjna dla klientów – współpracujemy z doświadczonymi fotografami, którzy korzystając z profesjonalnego sprzętu tworzą jedne z najlepszych zdjęć nieruchomości,</li>
                         <li className={style.item__li}>tworzenie nowoczesnych form prezentacji wizualnych:
-                        <ul className={style.item__ul2}>
+                            <ul className={style.item__ul2}>
                                 <li className={style.item__li}>wirtualnych wizyt 360° - taka forma prezentacji nieruchomości jest bardzo pożądana przez klientów i pozwala zaoszczędzić czas,</li>
                                 <li className={style.item__li}>profesjonalnego filmu reklamowego,</li>
                             </ul>
@@ -55,7 +55,7 @@ const Offer = () => {
                             <img className="img" src={offer__buy} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
-                            <h1 className="text1">Chcesz kupić?</h1>
+                            <h1 className="text1">Chcesz kupić</h1>
                             <div className="line"></div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ const Offer = () => {
                             <img className="img" src={offer__rent} alt="nieruchomość" />
                         </figure>
                         <div className={style.item__headerDesc}>
-                            <h1 className="text1">Chcesz wynająć?</h1>
+                            <h1 className="text1">Chcesz wynająć</h1>
                             <div className="line"></div>
                         </div>
                     </div>

@@ -48,7 +48,7 @@ const Contact = () => {
                         </div>
                         <div className={style.contacts__item} >
                             <a href='/' className={style.svg}><Clock /></a>
-                            <p className={style.contacts__desc}>Pn - Pt 8.00-16.00</p>
+                            <p className={style.contacts__desc}>Pn - Pt 9.00-19.00</p>
                         </div>
                     </div>
                 </section>
