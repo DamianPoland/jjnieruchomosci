@@ -141,7 +141,7 @@ const Home = () => {
                     <div className={style.contact__textContainer}>
                         <h1 className="text1">Chcesz nawiązać współpracę</h1>
                         <div className="line"></div>
-                        <p className="text2">Skontaktuj się ze mną, a chętnie udzielę Tobie odpowiedzi na wszystkie pytania. Przerowadzę Cię przez cały proces kupna lub sprzedaży nieruchomości.</p>
+                        <p className="text2">Skontaktuj się ze mną, a chętnie udzielę Tobie odpowiedzi na wszystkie pytania. Przeprowadzę Cię przez cały proces kupna lub sprzedaży nieruchomości.</p>
 
                         <p className={style.contact__tel}>
                             <a href='tel:+48513101116' className={style.contact__telIcon}>
