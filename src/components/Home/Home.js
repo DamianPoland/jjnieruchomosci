@@ -21,7 +21,6 @@ import { ReactComponent as Phone } from '../../assets/icons/phone.svg'
 
 
 
-
 const Home = () => {
 
     // scroll to top when componene render
