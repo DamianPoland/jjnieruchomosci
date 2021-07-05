@@ -120,7 +120,7 @@
 /*section ABOUT*/
 
 .about {
-    background: rgb(var(--dark));
+    background: #6e6e6e;/*rgb(var(--dark));*/
 
     max-width: 1920px;
     margin: auto;
