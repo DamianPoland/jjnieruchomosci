@@ -43,8 +43,8 @@ const Contact = () => {
                             <p className={style.contacts__desc}>biuro@jjnieruchomosci.com</p>
                         </div>
                         <div className={style.contacts__item}  >
-                            <a href='/' className={style.svg}><Facebbok /></a>
-                            <p className={style.contacts__desc}>Facebook ???</p>
+                            <a href='https://www.facebook.com/JJ-Nieruchomo%C5%9Bci-107383291609848' target='_blank' rel="noopener noreferrer" className={style.svg}><Facebbok /></a>
+                            <p className={style.contacts__desc}>Facebook</p>
                         </div>
                         <div className={style.contacts__item} >
                             <a href='/' className={style.svg}><Clock /></a>

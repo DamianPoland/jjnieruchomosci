@@ -53,15 +53,10 @@ const Footer = () => {
                                 <p className={style.desc__contactItemText}>Email</p>
                             </a>
 
-                            <a href='/' className={style.desc__contactItem}>
+                            <a href='https://www.facebook.com/JJ-Nieruchomo%C5%9Bci-107383291609848' target='_blank' rel="noopener noreferrer" className={style.desc__contactItem}>
                                 <Facebbok className={style.desc__contactItemSvg} />
                                 <p className={style.desc__contactItemText}>Facebbok</p>
                             </a>
-
-                            {/* <a href='https://twitter.com/BHPsfera' target='_blank' rel="noopener noreferrer" className={style.desc__contactItem}>
-                                <Twitter className={style.desc__contactItemSvg} />
-                                <p className={style.desc__contactItemText}>Twitter</p>
-                            </a> */}
 
                         </div>
                     </section>
