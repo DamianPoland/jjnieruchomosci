@@ -17,6 +17,7 @@
   --dark: 30, 30, 30;
   /* #1e1e1e */
 
+  --backgroundCustom: linear-gradient(90deg, rgb(240, 240, 240) 0%, rgb(221, 221, 221) 50%, rgb(240, 240, 240) 100%);
 
 }
 

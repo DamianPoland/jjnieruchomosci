@@ -11,6 +11,8 @@ import Nav from '../../components/Nav/Nav'
 import Home from '../../components/Home/Home'
 import About from '../../components/About/About'
 import Offer from '../../components/Offer/Offer'
+import Sale from '../../components/Sale/Sale'
+import Rent from '../../components/Rent/Rent'
 import Contact from '../../components/Contact/Contact'
 import Footer from '../../components/Footer/Footer'
 import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
@@ -49,6 +51,8 @@ const App = () => {
         <Route path='/home' render={props => <Home {...props} />} />
         <Route path='/about' render={props => <About {...props} />} />
         <Route path='/offer' render={props => <Offer {...props} />} />
+        <Route path='/sale' render={props => <Sale {...props} />} />
+        <Route path='/rent' render={props => <Rent {...props} />} />
         <Route path='/contact' render={props => <Contact {...props} />} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Redirect to='/home' />
