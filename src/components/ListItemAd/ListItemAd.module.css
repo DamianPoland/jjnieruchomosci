@@ -44,7 +44,7 @@
 
 .ads__itemDescTop {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 
@@ -55,9 +55,11 @@
 
 .ads__itemDescRight {
     display: flex;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     align-self: flex-start;
+    white-space: nowrap;
+    
 }
 
 .ads__itemText {
@@ -65,6 +67,11 @@
     padding: 0.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: rgb(var(--dark));
+}
+
+@media (min-width: 500px) {
+
 }
 
 @media (min-width: 800px) {
@@ -72,4 +79,11 @@
         width: 20rem;
         height: 15rem;
     }
+    .ads__itemDescTop {
+        font-size: 1.5rem;
+    }
+    .ads__itemDescRight {
+        font-size: 1rem;
+    }
+    
 }

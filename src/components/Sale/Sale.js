@@ -58,7 +58,7 @@ const Sale = ({ dataFromDB }) => {
                             </div>
                             : <div className={style.ads__emptyContainer}>
                                 <div className={style.ads__emptySVG}> <NoData /> </div>
-                                <p className={style.ads__emptyContainerDesc}>Brak ogłoszeń.</p>
+                                <p className={style.ads__emptyContainerDesc}>Brak ofert.</p>
                             </div>
                         }
                     </section>

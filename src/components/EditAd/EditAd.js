@@ -8,6 +8,9 @@ import imageCompression from 'browser-image-compression';
 //firebase
 import { firestore, storage } from '../../shared/fire'
 
+// constans
+import { mainColName } from '../../shared/constans'
+
 //photos
 import Photo from '../../assets/photo.png'
 
@@ -262,7 +265,7 @@ const EditAd = ({ setIsEditAdVisible }) => {
 
     // send ad to DB
     const sendAddItemToDB = (obj) => {
-        firestore.collection(typeAd).doc(adId).set(obj)
+        firestore.collection(mainColName).doc(adId).set(obj)
             .then(() => {
                 console.log('succes')
                 setIsEditAdVisible(false)

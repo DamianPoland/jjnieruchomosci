@@ -93,6 +93,11 @@ body::-webkit-scrollbar-thumb {
   font-size: 1rem;
   text-decoration: none;
   color: black;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px rgba(var(--accent), 0.5);
 }
 
 .btn:active {

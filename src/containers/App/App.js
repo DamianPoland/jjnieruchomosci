@@ -7,6 +7,9 @@ import { auth, firestore } from '../../shared/fire'
 // data
 import { mainCategories } from '../../shared/data'
 
+// constans
+import { mainColName } from '../../shared/constans'
+
 // aos
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -16,6 +19,7 @@ import Nav from '../../components/Nav/Nav'
 import Home from '../../components/Home/Home'
 import About from '../../components/About/About'
 import Offer from '../../components/Offer/Offer'
+import Ad from '../../components/Ad/Ad'
 import Sale from '../../components/Sale/Sale'
 import Rent from '../../components/Rent/Rent'
 import Contact from '../../components/Contact/Contact'
@@ -54,26 +58,16 @@ const App = () => {
   const [rentDBData, setRentDBData] = useState([])
   useEffect(() => {
 
-    // listener for collection sale
-    firestore.collection(mainCategories[0].id).onSnapshot(
+    // listener for main collection
+    firestore.collection(mainColName).onSnapshot(
       resp => {
         let helpArray = []
-        resp.forEach(doc => helpArray.push(doc.data()))
-        setSaleDBData(helpArray)
+        resp.forEach(doc => helpArray.push(doc.data())) // get all data from DB
+        setSaleDBData(helpArray.filter(i => i.typeAd === mainCategories[0].id)) // filter only sale ads
+        setRentDBData(helpArray.filter(i => i.typeAd === mainCategories[1].id)) // filter only rent ads
         console.log("saleDBData: ", helpArray);
       },
       err => console.log(err.message))
-
-    // listener for collection rent
-    firestore.collection(mainCategories[1].id).onSnapshot(
-      resp => {
-        let helpArray = []
-        resp.forEach(doc => helpArray.push(doc.data()))
-        setRentDBData(helpArray)
-        console.log("rentDBData: ", helpArray);
-      },
-      err => console.log(err.message))
-
 
   }, [])
 
@@ -83,7 +77,8 @@ const App = () => {
       <Switch>
         <Route path='/home' render={props => <Home {...props} />} />
         <Route path='/about' render={props => <About {...props} />} />
-        <Route path='/offer' render={props => <Offer {...props} />} />
+        <Route path='/offer' exact render={props => <Offer {...props} />} />
+        <Route path='/offer/:key' render={props => <Ad {...props} />} />
         <Route path='/sale' render={props => <Sale {...props} dataFromDB={saleDBData} />} />
         <Route path='/rent' render={props => <Rent {...props} dataFromDB={rentDBData} />} />
         <Route path='/contact' render={props => <Contact {...props} />} />

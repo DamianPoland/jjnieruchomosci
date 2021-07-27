@@ -1,0 +1,147 @@
+.background {
+    margin-top: 4rem;
+    background: var(--backgroundCustom);
+    min-height: calc(100vh - 15rem);
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+.btnContainer {
+    display: flex;
+    padding: 0 0 2rem 0;
+}
+
+
+/* PHOTOS SECTION */
+
+.photos__section {
+    padding: 0 1rem 1rem 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.photos {
+    display: flex;
+}
+
+.photos__container {
+    padding: 2rem 0 0 0;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photos__figureBig {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    padding-top: 75%;
+    position: relative;
+}
+
+.photos__imgBig {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.photos__containerSmall {
+    width: 100%;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+
+}
+
+.photos__figureSmall {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding-top: 75%;
+    position: relative;
+    cursor: pointer;
+    border: 0.2rem solid transparent;
+
+}
+
+.photos__figureSmallBorder {
+    border: 0.2rem solid rgba(var(--accent), 1);
+}
+
+.photos__imgSmall {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.photos__itemDescTopContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photos__itemTextTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* DESC params and meet SECTION */
+
+.desc {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.desc__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.desc__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desc__text {
+    padding: 1rem 0 0 1rem;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+
+@media (min-width: 500px) {
+
+    .photos__section {
+        padding: 1rem 2rem 2rem 2rem;
+    }
+
+    .desc__title {
+        font-size: 2rem;
+    }
+
+    .photos__itemTextTitle {
+        font-size: 2rem;
+    }
+
+    .desc {
+        padding: 2rem;
+    }
+}
