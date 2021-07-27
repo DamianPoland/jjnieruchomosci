@@ -22,3 +22,5 @@ export const mainCategories = [
         ]
     },
 ]
+
+export const statusAdArray = ['Aktualne', "Rezerwacja", 'Sprzedane']

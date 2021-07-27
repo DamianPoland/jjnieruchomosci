@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
+//firebase
+import { auth, firestore } from '../../shared/fire'
+
+// data
+import { mainCategories } from '../../shared/data'
+
 // aos
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
 
 // components
 import Nav from '../../components/Nav/Nav'
@@ -44,6 +49,34 @@ const App = () => {
   }, [])
 
 
+  // DB listeners
+  const [saleDBData, setSaleDBData] = useState([])
+  const [rentDBData, setRentDBData] = useState([])
+  useEffect(() => {
+
+    // listener for collection sale
+    firestore.collection(mainCategories[0].id).onSnapshot(
+      resp => {
+        let helpArray = []
+        resp.forEach(doc => helpArray.push(doc.data()))
+        setSaleDBData(helpArray)
+        console.log("saleDBData: ", helpArray);
+      },
+      err => console.log(err.message))
+
+    // listener for collection rent
+    firestore.collection(mainCategories[1].id).onSnapshot(
+      resp => {
+        let helpArray = []
+        resp.forEach(doc => helpArray.push(doc.data()))
+        setRentDBData(helpArray)
+        console.log("rentDBData: ", helpArray);
+      },
+      err => console.log(err.message))
+
+
+  }, [])
+
   return (
     <BrowserRouter>
       <Nav path='/' />
@@ -51,8 +84,8 @@ const App = () => {
         <Route path='/home' render={props => <Home {...props} />} />
         <Route path='/about' render={props => <About {...props} />} />
         <Route path='/offer' render={props => <Offer {...props} />} />
-        <Route path='/sale' render={props => <Sale {...props} />} />
-        <Route path='/rent' render={props => <Rent {...props} />} />
+        <Route path='/sale' render={props => <Sale {...props} dataFromDB={saleDBData} />} />
+        <Route path='/rent' render={props => <Rent {...props} dataFromDB={rentDBData} />} />
         <Route path='/contact' render={props => <Contact {...props} />} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Redirect to='/home' />

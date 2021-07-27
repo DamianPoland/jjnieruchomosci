@@ -2,6 +2,7 @@
     padding: 2rem 1rem;
     max-width: 1200px;
     margin: auto;
+    position: relative;
 }
 
 .ad__section {
@@ -14,12 +15,15 @@
 
 .ad__container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 1rem 2rem 0 2rem;
 }
 .ad__containerPhotos {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
 }
 
 .ad__itemContainer {
@@ -30,13 +34,17 @@
     position: relative;
 }
 
+.ad__itemContainerWide {
+    width: 100%;
+    padding: 2rem;
+}
+
 .ad__itemDesc {
     padding-bottom: 0.5rem;
     font-size: 1rem;
 }
 .ad__itemList {
     background-color: white;
-    color: rgba(var(--accent), 1);
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
@@ -88,6 +96,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 2rem;
 }
 
 .btn {

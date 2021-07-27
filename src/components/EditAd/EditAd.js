@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import style from './EditAd.module.css'
-import { mainCategories } from '../../shared/data'
+import { mainCategories, statusAdArray } from '../../shared/data'
 
 // image compression library
 import imageCompression from 'browser-image-compression';
 
 //firebase
-import { auth, firestore, storage } from '../../shared/fire'
+import { firestore, storage } from '../../shared/fire'
 
 //photos
 import Photo from '../../assets/photo.png'
@@ -15,27 +15,32 @@ import Photo from '../../assets/photo.png'
 import AlertSmall from "../../UI/AlertSmall/AlertSmall"
 
 
-const EditAd = () => {
+const EditAd = ({ setIsEditAdVisible }) => {
+
+
+    // generator [yyyy-mm-dd date1970]
+    const idGenerator = () => `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} ${new Date().getTime()}`
 
     // show or hide small alert
     const [isAlertSmallShow, setIsAlertSmallShow] = useState(false)
 
     // adId
-    const [adId, setAdId] = useState('example adId')
+    const [adId, setAdId] = useState(idGenerator())
 
-    // TYPE and CATEGORY ----------------------------------------------------------------------------------------------------
-    const [type, setType] = useState(mainCategories[0].id)
-    const [category, setCategory] = useState("")
-    useEffect(() => { setCategory(mainCategories[0].categories[0].nameDB) }, [type])
+    // TYPE CATEGORY STATUS ----------------------------------------------------------------------------------------------------
+    const [typeAd, setTypeAd] = useState(mainCategories[0].id)
+    const [categoryAd, setCategoryAd] = useState("")
+    const [statusAd, setStatusAd] = useState(statusAdArray[0])
+    useEffect(() => { setCategoryAd(mainCategories[0].categories[0].nameDB) }, [typeAd])
 
 
     // PHOTOS----------------------------------------------------------------------------------------------------------------
-    // STATE - input Image
-    const [image, setImage] = useState([null, null, null, null]) // input image value
-    const [imageURL, setImageURL] = useState([null, null, null, null]) // write URL from DB
+
+    const [image, setImage] = useState([null, null, null, null, null, null, null, null, null, null]) // input image value
+    const [imageURL, setImageURL] = useState([null, null, null, null, null, null, null, null, null, null]) // write URL from DB
     const [smallImageURL, setSmallImageURL] = useState("") // write URL from DB
     const [progress, setProgress] = useState(0) // progress bar
-    const [showProgress, setShowProgress] = useState([false, false, false, false]) // set progress visibility
+    const [showProgress, setShowProgress] = useState([false, false, false, false, false, false, false, false, false, false]) // set progress visibility
 
     // get photo from file/camera
     const getPhoto = (e, index) => {
@@ -93,6 +98,18 @@ const EditAd = () => {
         addImgToDB(image[7], 7)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [image[7]])
+
+    // add image 8 to DB and show to user
+    useEffect(() => {
+        addImgToDB(image[8], 8)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [image[8]])
+
+    // add image 9 to DB and show to user
+    useEffect(() => {
+        addImgToDB(image[9], 9)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [image[9]])
 
 
     // add image to DB and show to user, index -1 is for smallImageURL
@@ -204,37 +221,150 @@ const EditAd = () => {
     }
 
 
+    // DESCRIPTIONS----------------------------------------------------------------------------------------------------------------
+    const [titleAd, setTitleAd] = useState('')
+    const [descriptionAd, setDescriptionAd] = useState('')
+    const [priceAd, setPriceAd] = useState('')
+    const [measurementAd, setMeasurementAd] = useState('')
+    const [locationAd, setLocationAd] = useState('')
+
+
+    // FUNCTIONS ----------------------------------------------------------------------------------------------------------------
+
+
+
+
+    // after finish form, use form for: add or edit
+    const handleReadyAd = () => {
+
+        const obj = getDataObjectWithAllInputs()
+        console.log(obj);
+        sendAddItemToDB(obj)
+
+    }
+
+
+    const getDataObjectWithAllInputs = () => {
+        return {
+            adId,
+            typeAd,
+            categoryAd,
+            statusAd,
+            imageURL,
+            smallImageURL,
+            titleAd,
+            descriptionAd,
+            priceAd,
+            measurementAd,
+            locationAd,
+        }
+    }
+
+    // send ad to DB
+    const sendAddItemToDB = (obj) => {
+        firestore.collection(typeAd).doc(adId).set(obj)
+            .then(() => {
+                console.log('succes')
+                setIsEditAdVisible(false)
+            })
+            .catch(err => console.log('err', err))
+
+    }
+
+    // call when cancel form
+    const cancelForm = () => {
+        deleteImagesAndFolderFromDB()
+        setIsEditAdVisible(false)
+    }
+
+    const makeAllInputsDefault = () => {
+
+        // adId
+        setAdId(idGenerator())
+
+        // TYPE CATEGORY STATUS
+        setTypeAd(mainCategories[0].id)
+        setCategoryAd('')
+        setStatusAd(statusAdArray[0])
+
+        // PHOTOS
+        setImage([null, null, null, null, null, null, null, null, null, null])
+        setImageURL([null, null, null, null, null, null, null, null, null, null])
+        setSmallImageURL('')
+        setProgress(0)
+        setShowProgress([false, false, false, false, false, false, false, false, false, false])
+
+        // DESCRIPTIONS
+        setTitleAd('')
+        setDescriptionAd('')
+        setPriceAd('')
+        setMeasurementAd('')
+        setLocationAd('')
+    }
+
+
+    // delete all images and folder from DB
+    const deleteImagesAndFolderFromDB = () => {
+        const ref = storage.ref(`images/${adId}`)
+        ref.listAll()
+            .then(resp => {
+                resp.items.forEach(fileRef => {
+                    storage.ref(fileRef.fullPath).getDownloadURL()
+                        .then(url => {
+                            storage.refFromURL(url).delete()
+                                .then()
+                                .catch(error => console.log("error deletion, error: ", error))
+                        })
+                })
+            })
+            .catch(error => console.log(error))
+    }
+
+
+
+
+
     return (
         <main className={style.ad}>
 
             {/* AlertSmall */}
             {isAlertSmallShow && <AlertSmall alertIcon={isAlertSmallShow.alertIcon} description={isAlertSmallShow.description} animationTime={isAlertSmallShow.animationTime} borderColor={isAlertSmallShow.borderColor} hide={() => setIsAlertSmallShow(false)} />}
 
+
             <div className={style.ad__section}>
 
+                {/* type and category */}
                 <div className={style.ad__container}>
+
                     <div className={style.ad__itemContainer}>
                         <p className={style.ad__itemDesc}>Typ:</p>
-                        <select className={style.ad__itemList} onChange={e => setType(e.target.value)} value={type}>
+                        <select className={style.ad__itemList} onChange={e => setTypeAd(e.target.value)} value={typeAd}>
                             {mainCategories.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
                         </select>
                     </div>
 
                     <div className={style.ad__itemContainer}>
                         <p className={style.ad__itemDesc}>Kategoria:</p>
-                        <select className={style.ad__itemList} onChange={e => setCategory(e.target.value)} value={category}>
-                            {mainCategories.find(item => item.id === type).categories.map(item => <option key={item.nameDB} value={item.nameDB}>{item.name}</option>)}
+                        <select className={style.ad__itemList} onChange={e => setCategoryAd(e.target.value)} value={categoryAd}>
+                            {mainCategories.find(item => item.id === typeAd).categories.map(item => <option key={item.nameDB} value={item.nameDB}>{item.name}</option>)}
                         </select>
                     </div>
+
+                    <div className={style.ad__itemContainer}>
+                        <p className={style.ad__itemDesc}>Status:</p>
+                        <select className={style.ad__itemList} onChange={e => setStatusAd(e.target.value)} value={statusAd}>
+                            {statusAdArray.map(item => <option key={item} value={item}>{item}</option>)}
+                        </select>
+                    </div>
+
                 </div>
 
 
+                {/* Photos  */}
                 <div className={style.ad__containerPhotos}>
                     <p className={style.ad__itemContainer}>Zdjęcia:</p>
                     <div className={style.ad__containerPhotos}>
-
-
-                        {[...Array(8)].map((item, index) => {
+                        {[...Array(10)].map((item, index) => {
                             return (
                                 <div key={index} className={style.ad__itemContainer}>
                                     <input
@@ -257,9 +387,47 @@ const EditAd = () => {
                     </div>
                 </div>
 
+
+                {/* descriptions  */}
+                <div className={`${style.ad__itemContainer} ${style.ad__itemContainerWide}`}>
+                    <label className={style.ad__itemDesc}>Tytuł ogłoszenia (max 50 znaków):</label>
+                    <input onChange={event => setTitleAd(event.target.value)} value={titleAd} className={style.ad__itemList} placeholder='Tytuł ogłoszenia' type='text' maxLength="50" />
+                </div>
+
+                <div className={`${style.ad__itemContainer} ${style.ad__itemContainerWide}`}>
+                    <label className={style.ad__itemDesc}>Opis (max 1000 znaków):</label>
+                    <textarea onChange={event => setDescriptionAd(event.target.value)} value={descriptionAd} className={style.ad__itemList} type='textarea' rows='8' placeholder="Opis ogłoszenia" maxLength="1000" />
+                </div>
+
+                <div className={style.ad__container}>
+
+                    <div className={style.ad__itemContainer}>
+                        <label className={style.ad__itemDesc}>Cena w zł:</label>
+                        <input onChange={event => setPriceAd(event.target.value)} value={priceAd} className={style.ad__itemList} type='text' placeholder="np. 200 000" maxLength="9" />
+                    </div>
+
+                    <div className={style.ad__itemContainer}>
+                        <label className={style.ad__itemDesc}>Metraż w m2:</label>
+                        <input onChange={event => setMeasurementAd(event.target.value)} value={measurementAd} className={style.ad__itemList} type='text' placeholder="np. 50" maxLength="7" />
+                    </div>
+
+                    <div className={style.ad__itemContainer}>
+                        <label className={style.ad__itemDesc}>Lokalizacja:</label>
+                        <input onChange={event => setLocationAd(event.target.value)} value={locationAd} className={style.ad__itemList} type='text' placeholder="np. Gdynia Fikakowo" maxLength="50" />
+                    </div>
+
+                </div>
+
+                {/* buttons */}
+                <div className={style.btnContainer}>
+                    <button className={`${style.btn} ${style.btnMmargin}`} onClick={cancelForm}>Anuluj</button>
+                    <button className={style.btn} onClick={handleReadyAd}>Zapisz</button>
+                </div>
+
             </div>
-        </main>
+        </main >
     )
 }
 
 export default EditAd
+

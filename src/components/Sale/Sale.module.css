@@ -1,9 +1,11 @@
 .section {
     background: var(--backgroundCustom);
-    padding: 8rem 0 8rem 0;
+    padding: 4rem 0 0 0;
 }
 
 .section__container {
+    max-width: 1000px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -14,8 +16,12 @@
 /* CATEGORIES */
 
 .categories {
+    width: 100%;
     padding: 2rem 0.5rem 0 0.5rem;
     margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .categories__container {
@@ -59,4 +65,35 @@
     padding-top: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
+}
+
+
+/* ADS */
+
+.ads {
+    width: 100%;
+    margin: 0 1rem;
+    padding: 2rem 0 0 0;
+    position: relative;
+}
+
+.ads__emptyContainer {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    padding: 2rem 0;
+}
+
+.ads__emptyContainerDesc {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.ads__emptySVG {
+    width: 100%;
+    height: 100%;
 }
