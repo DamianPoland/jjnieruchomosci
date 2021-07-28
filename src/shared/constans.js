@@ -1,3 +1,4 @@
-export const mainColName = 'offers'
+export const mainColName = 'ads'
+export const UID = 'uid'
 
 

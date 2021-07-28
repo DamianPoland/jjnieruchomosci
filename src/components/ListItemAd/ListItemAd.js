@@ -7,10 +7,10 @@ import PhotoEmpty from '../../assets/photoEmpty.png'
 
 
 
-const ListItemAd = ({ item }) => {
+const ListItemAd = ({ item, isLogIn, editAd }) => {
 
     return (
-        <Link to={`/offer/${item.adId}`} className={style.ads__item} >
+        <Link to={`/ads/${item.adId}`} className={style.ads__item} >
             <div className={style.ads__itemContainer}>
                 <figure className={style.ads__itemFigure}>
                     <img className={style.ads__itemImg} src={item.smallImageURL || PhotoEmpty} onError={(e) => { e.target.onerror = null; e.target.src = PhotoEmpty }} alt="main nieruchomość" />
@@ -32,6 +32,7 @@ const ListItemAd = ({ item }) => {
 
             <div className={style.ads__itemDescRight} >
                 <p className={style.ads__itemText}>{item.priceAd} zł</p>
+                {isLogIn && <button className='btn' onClick={(e) => editAd(e, item)}>Edytuj</button>}
             </div>
         </Link>
     )

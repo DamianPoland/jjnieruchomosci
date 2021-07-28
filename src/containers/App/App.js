@@ -4,11 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 //firebase
 import { auth, firestore } from '../../shared/fire'
 
-// data
-import { mainCategories } from '../../shared/data'
-
 // constans
-import { mainColName } from '../../shared/constans'
+import { UID, mainColName } from '../../shared/constans'
 
 // aos
 import AOS from 'aos'
@@ -20,9 +17,9 @@ import Home from '../../components/Home/Home'
 import About from '../../components/About/About'
 import Offer from '../../components/Offer/Offer'
 import Ad from '../../components/Ad/Ad'
-import Sale from '../../components/Sale/Sale'
-import Rent from '../../components/Rent/Rent'
+import Ads from '../../components/Ads/Ads'
 import Contact from '../../components/Contact/Contact'
+import Login from '../../components/Login/Login'
 import Footer from '../../components/Footer/Footer'
 import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
 import AlertPrivacy from '../../UI/AlertPrivacy/AlertPrivacy'
@@ -54,22 +51,28 @@ const App = () => {
 
 
   // DB listeners
-  const [saleDBData, setSaleDBData] = useState([])
-  const [rentDBData, setRentDBData] = useState([])
+  const [adsFromDB, setAdsFromDB] = useState([])
   useEffect(() => {
-
-    // listener for main collection
     firestore.collection(mainColName).onSnapshot(
       resp => {
         let helpArray = []
         resp.forEach(doc => helpArray.push(doc.data())) // get all data from DB
-        setSaleDBData(helpArray.filter(i => i.typeAd === mainCategories[0].id)) // filter only sale ads
-        setRentDBData(helpArray.filter(i => i.typeAd === mainCategories[1].id)) // filter only rent ads
-        console.log("saleDBData: ", helpArray);
+        setAdsFromDB(helpArray)
       },
       err => console.log(err.message))
 
   }, [])
+
+
+  // login
+  const [isLogIn, setisLogIn] = useState(localStorage.getItem(UID))
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      user ? localStorage.setItem(UID, true) : localStorage.removeItem(UID)
+      user ? setisLogIn(true) : setisLogIn(false)
+    })
+  }, [])
+
 
   return (
     <BrowserRouter>
@@ -77,11 +80,11 @@ const App = () => {
       <Switch>
         <Route path='/home' render={props => <Home {...props} />} />
         <Route path='/about' render={props => <About {...props} />} />
-        <Route path='/offer' exact render={props => <Offer {...props} />} />
-        <Route path='/offer/:key' render={props => <Ad {...props} />} />
-        <Route path='/sale' render={props => <Sale {...props} dataFromDB={saleDBData} />} />
-        <Route path='/rent' render={props => <Rent {...props} dataFromDB={rentDBData} />} />
+        <Route path='/offer' render={props => <Offer {...props} />} />
+        <Route path='/ads' exact render={props => <Ads {...props} adsFromDB={adsFromDB} isLogIn={isLogIn} />} />
+        <Route path='/ads/:key' render={props => <Ad {...props} />} />
         <Route path='/contact' render={props => <Contact {...props} />} />
+        <Route path='/login' render={props => <Login {...props} isLogIn={isLogIn} />} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Redirect to='/home' />
       </Switch>

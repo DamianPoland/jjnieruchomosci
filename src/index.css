@@ -89,11 +89,14 @@ body::-webkit-scrollbar-thumb {
   border: solid 0.2rem rgba(var(--accent), 0.6);
   padding: 0.5rem 2rem;
   display: inline-block;
-  margin-top: 1rem;
   font-size: 1rem;
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+.btnMarginTop {
+  margin-top: 2rem;
 }
 
 .btn:hover {

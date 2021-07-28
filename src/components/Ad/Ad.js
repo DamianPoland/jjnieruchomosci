@@ -92,7 +92,7 @@ const Ad = props => {
                             <div className={style.photos__container}>
 
                                 <figure className={style.photos__figureBig}>
-                                    <img className={style.photos__imgBig} src={mainPhoto || PhotoEmpty} alt="main" />
+                                    <img className={style.photos__imgBig} src={mainPhoto || PhotoEmpty} onError={(e) => { e.target.onerror = null; e.target.src = PhotoEmpty }} alt="main" />
                                 </figure>
 
                                 <div className={style.photos__containerSmall}>
@@ -100,7 +100,7 @@ const Ad = props => {
                                         return (
                                             item &&
                                             <figure className={`${style.photos__figureSmall} ${mainPhoto === item && style.photos__figureSmallBorder}`} key={id}>
-                                                <img onClick={() => setMainPhoto(item)} className={style.photos__imgSmall} src={item || PhotoEmpty} alt={`main${id}`} />
+                                                <img onClick={() => setMainPhoto(item)} className={style.photos__imgSmall} src={item || PhotoEmpty} onError={(e) => { e.target.onerror = null; e.target.src = PhotoEmpty }} alt={`main${id}`} />
                                             </figure>
                                         )
                                     })}
@@ -114,7 +114,7 @@ const Ad = props => {
                     <section className={style.desc}>
                         <p className={style.desc__title}>Dane:</p>
                         <div className={style.desc__container}>
-                            {oneAd.categoryAd && <p className={style.desc__text}>Kategoria: <b>{`${mainCategories.find(i => i.id === oneAd.typeAd).name} - ${mainCategories.find(i => i.id === oneAd.typeAd).categories.find(i => i.nameDB === oneAd.categoryAd).name}`}</b></p>}
+                            {oneAd.categoryAd && <p className={style.desc__text}>Kategoria: <b>{`${mainCategories.find(i => i.id === oneAd.categoryAd).type} - ${mainCategories.find(i => i.id === oneAd.categoryAd).category}`}</b></p>}
                             {oneAd.statusAd && <p className={style.desc__text}>Status: <b>{oneAd.statusAd}</b></p>}
                             {oneAd.priceAd && <p className={style.desc__text}>Cena: <b>{oneAd.priceAd} zł</b></p>}
                             {oneAd.measurementAd && <p className={style.desc__text}>Metraż: <b>{oneAd.measurementAd} m2</b></p>}

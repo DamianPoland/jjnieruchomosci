@@ -7,7 +7,6 @@ import { ReactComponent as Phone } from '../../assets/icons/phone.svg'
 import { ReactComponent as Location } from '../../assets/icons/location.svg'
 import { ReactComponent as Email } from '../../assets/icons/email.svg'
 import { ReactComponent as Facebbok } from '../../assets/icons/facebook.svg'
-// import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg'
 
 
 const Footer = () => {
@@ -19,7 +18,7 @@ const Footer = () => {
 
                     <section className={style.desc__item}>
                         <p className={style.desc__title}>O FIRMIE</p>
-                        <p className={style.desc__text}>Oferuję usługi pośrednictwa w sprzedaży<br />i zakupie domów, mieszkań i działek.<br />Zajmuję się kompleksową obsługą umów,<br />obsługą prawną, doradztwem oraz<br />bezpieczeństwem transakcji.</p>
+                        <p className={style.desc__text}>Oferuję usługi pośrednictwa w sprzedaży<br />i zakupie domów, mieszkań i działek.<br />Zajmuję się kompleksową obsługą<br />umów oraz bezpieczeństwem transakcji.<br /> W zakresie usług prawnych współpracuje<br />z profesjonalnymi kancelariami.</p>
                     </section>
 
                     <section className={style.desc__item}>
@@ -28,6 +27,7 @@ const Footer = () => {
                             <Link to='/home' className={style.desc__link}><i className={style.desc__arrow} />Strona główna</Link>
                             <Link to='/about' className={style.desc__link}><i className={style.desc__arrow} />O firmie</Link>
                             <Link to='/offer' className={style.desc__link}><i className={style.desc__arrow} />Oferta</Link>
+                            <Link to='/ads' className={style.desc__link}><i className={style.desc__arrow} />Ogłoszenia</Link>
                             <Link to='/contact' className={style.desc__link}><i className={style.desc__arrow} />Kontakt</Link>
                             <Link to='/privacy-policy' className={style.desc__link}><i className={style.desc__arrow} />Polityka prywatności</Link>
                         </nav>

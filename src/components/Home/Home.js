@@ -88,7 +88,7 @@ const Home = () => {
                         <h1 className="text1">Kim jestem</h1>
                         <div className="line"></div>
                         <p className="text2 text__white">Jestem rodowitą gdańszczanką. Od 17 lat mieszkam w Gdyni. Ukończyłam w 2008 roku studia podyplomowe na Wyższej Szkole Gospodarowania Nieruchomościami na Politechnice Gdańskiej i uzyskałam licencję zawodową w zakresie pośrednictwa w obrocie nieruchomościami – nr 8998.</p>
-                        <div><Link to='/about' className="btn text__white">Więcej o mnie</Link></div>
+                        <div><Link to='/about' className="btn btnMarginTop text__white">Więcej o mnie</Link></div>
                     </div>
                 </div>
             </section>
@@ -102,7 +102,7 @@ const Home = () => {
                             <h1 className="text1">Czym się zajmuję</h1>
                             <div className="line"></div>
                             <p className="text2">Oferuję usługi pośrednictwa w sprzedaży i zakupie domów, mieszkań i działek. Zajmuję się kompleksową obsługą umów, obsługą prawną, doradztwem oraz bezpieczeństwem transakcji.</p>
-                            <div><Link to='/offer' className="btn">Pełna oferta</Link></div>
+                            <div><Link to='/offer' className="btn btnMarginTop">Pełna oferta</Link></div>
                         </div>
                     </div>
                     <figure data-aos="fade-left" className={style.offer__figure}>
@@ -127,6 +127,7 @@ const Home = () => {
                             <li className={style.why__li}>Do każdego klienta podchodzę indywidualnie.</li>
                             <li className={style.why__li}>Mam wieloletnie doświadczenie zarówno w sprzedaży jak i wynajmie nieruchomości.</li>
                         </ul>
+                        <div><Link to='/ads' className="btn">Ogłoszenia</Link></div>
                     </div>
                     <figure className={style.why__figure2}>
                         <img className={style.why__img} src={home__why2} alt="bhp" />
@@ -148,17 +149,13 @@ const Home = () => {
                                 <Phone />
                             </a> +48 513-101-116
                         </p>
-                        <div><Link to='/contact' className="btn">Pozostałe formy kontaktu</Link></div>
+                        <div><Link to='/contact' className="btn btnMarginTop">Pozostałe formy kontaktu</Link></div>
                     </div>
                 </div>
                 <figure data-aos="fade-left" className={style.contact__figure}>
                     <img className={style.contact__img} src={home__contact} alt="bhp" />
                 </figure>
             </section>
-
-
-
-
 
         </main >
     )

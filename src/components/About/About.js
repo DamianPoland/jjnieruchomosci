@@ -33,9 +33,10 @@ const About = () => {
                             <div className="textContainer">
                                 <h1 className="text1">Kim jestem</h1>
                                 <div className="line"></div>
-                                <p className="text2"><span className={style.text__bigLeter}>N</span>azywam się Joanna Janiec. Jestem rodowitą gdańszczanką. Od 17 lat mieszkam w Gdyni. W 2006 roku ukończyłam studia magisterskie na Wydziale Pedagogicznym na kierunkach resocjalizacja oraz pedagogika ogólna. Moją pasją natomiast od zawsze było pośrednictwo w obrocie nieruchomościami. W tym celu ukończyłam w 2008 roku studia podyplomowe na Wyższej Szkole Gospodarowania Nieruchomościami na Politechnice Gdańskiej i uzyskałam licencję zawodową w zakresie pośrednictwa w obrocie nieruchomościami – nr 8998.</p>
-                                <p className="text2"><span className={style.text__bigLeter}>J</span>uż w trakcie studiów rozpoczęłam pracę w biurze nieruchomości. Swoje doświadczenie w zawodzie buduję od 2006 roku. W tym czasie pośredniczyłam w sprzedaży i zakupie domów, mieszkań i działek. Jednym z moich sukcesów było podpisanie umowy z firmą deweloperską.</p>
-                                <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją są zagadnienia z pogranicza psychobiologii i fizyki kwantowej.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>N</span>azywam się Joanna Janiec. Urodziłam się i mieszkałam w Gdańsku, ale od 17 lat mieszkam w Gdyni. W 2006 roku ukończyłam studia magisterskie na Wydziale Pedagogicznym na kierunkach resocjalizacja oraz pedagogika ogólna.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją od zawsze było pośrednictwo w obrocie nieruchomościami. Stąd w dążeniu do celu w roku 2008 ukończyłam studia podyplomowe na Wyższej Szkole Gospodarowania Nieruchomościami na Politechnice Gdańskiej i uzyskałam licencję zawodową w zakresie pośrednictwa w obrocie nieruchomościami – nr 8998.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>W</span> trakcie studiów rozpoczęłam pracę w biurze nieruchomości. Swoje doświadczenie w zawodzie buduję od 2006 roku. W tym czasie pośredniczyłam w sprzedaży i zakupie domów, mieszkań i działek. Jednym z wielu sukcesów było podpisanie umowy z firmą deweloperską.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją są zagadnienia z pogranicza psychobiologii i fizyki kwantowej, ale także lubię czytać, biegać i zjeść dobrą oryginalna kuchnię.</p>
                             </div>
                         </div>
                     </div>
@@ -51,8 +52,8 @@ const About = () => {
                             <div className="textContainer">
                                 <h1 className="text1">Co mnie wyróżnia</h1>
                                 <div className="line"></div>
-                                <p className="text2"><span className={style.text__bigLeter}>A</span>by być bardziej skuteczną w negocjacjach z korzyścią dla Klientów ukończyłam studia podyplomowe w zakresie: Coaching w biznesie w Szkole Wyższej Psychologii Społecznej w 2013 roku. Do moich zainteresowań należą również prawo oraz mediacje sądowe.</p>
-                                <p className="text2"><span className={style.text__bigLeter}>W</span> 2019 roku ukończyłam studia podyplomowe na kierunku mediacje sądowe w czterech kategoriach: karnych; rówieśniczych, szkolnych i oświatowych; rodzinnych oraz cywilnych i gospodarczych. Przez wiele lat zdobywałam również doświadczenie zawodowe w branży transportowej i spedycyjnej na stanowisku managera.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>D</span>ążąc do perfekcji, tym samym doskonaląc swój warsztat wiedzy i doświadczeń w 2013 roku ukończyłam studia podyplomowe w zakresie: Coaching w biznesie w Szkole Wyższej Psychologii Społecznej, a także w 2019 roku studia podyplomowe na kierunku mediacje sądowe.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>P</span>rzez wiele lat zdobywałam również doświadczenie zawodowe w branży transportowej i spedycyjnej na stanowisku managera.</p>
 
                             </div>
                         </div>

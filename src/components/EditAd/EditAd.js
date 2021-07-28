@@ -18,7 +18,7 @@ import Photo from '../../assets/photo.png'
 import AlertSmall from "../../UI/AlertSmall/AlertSmall"
 
 
-const EditAd = ({ setIsEditAdVisible }) => {
+const EditAd = ({ setIsEditAdVisible, editAdData }) => {
 
 
     // generator [yyyy-mm-dd date1970]
@@ -30,11 +30,10 @@ const EditAd = ({ setIsEditAdVisible }) => {
     // adId
     const [adId, setAdId] = useState(idGenerator())
 
-    // TYPE CATEGORY STATUS ----------------------------------------------------------------------------------------------------
-    const [typeAd, setTypeAd] = useState(mainCategories[0].id)
-    const [categoryAd, setCategoryAd] = useState("")
+    // CATEGORY & STATUS ----------------------------------------------------------------------------------------------------
+
+    const [categoryAd, setCategoryAd] = useState(mainCategories[0].id)
     const [statusAd, setStatusAd] = useState(statusAdArray[0])
-    useEffect(() => { setCategoryAd(mainCategories[0].categories[0].nameDB) }, [typeAd])
 
 
     // PHOTOS----------------------------------------------------------------------------------------------------------------
@@ -225,6 +224,7 @@ const EditAd = ({ setIsEditAdVisible }) => {
 
 
     // DESCRIPTIONS----------------------------------------------------------------------------------------------------------------
+
     const [titleAd, setTitleAd] = useState('')
     const [descriptionAd, setDescriptionAd] = useState('')
     const [priceAd, setPriceAd] = useState('')
@@ -232,25 +232,49 @@ const EditAd = ({ setIsEditAdVisible }) => {
     const [locationAd, setLocationAd] = useState('')
 
 
+
+    // IF AD IS EDITING ----------------------------------------------------------------------------------------------------------------
+
+
+    useEffect(() => editAdData && addAllDataToInputsIfAdIsEdit(editAdData), [editAdData])
+
+    const addAllDataToInputsIfAdIsEdit = editAdData => {
+
+        // adId
+        setAdId(editAdData.adId)
+
+        // TYPE CATEGORY STATUS
+        setCategoryAd(editAdData.categoryAd)
+        setStatusAd(editAdData.statusAd)
+
+        // PHOTOS
+        setImage([null, null, null, null, null, null, null, null, null, null])
+        setImageURL(editAdData.imageURL)
+        setSmallImageURL(editAdData.smallImageURL)
+        setProgress(0)
+        setShowProgress([false, false, false, false, false, false, false, false, false, false])
+
+        // DESCRIPTIONS
+        setTitleAd(editAdData.titleAd)
+        setDescriptionAd(editAdData.descriptionAd)
+        setPriceAd(editAdData.priceAd)
+        setMeasurementAd(editAdData.measurementAd)
+        setLocationAd(editAdData.locationAd)
+    }
+
+
     // FUNCTIONS ----------------------------------------------------------------------------------------------------------------
-
-
 
 
     // after finish form, use form for: add or edit
     const handleReadyAd = () => {
-
         const obj = getDataObjectWithAllInputs()
-        console.log(obj);
         sendAddItemToDB(obj)
-
     }
-
 
     const getDataObjectWithAllInputs = () => {
         return {
             adId,
-            typeAd,
             categoryAd,
             statusAd,
             imageURL,
@@ -263,7 +287,7 @@ const EditAd = ({ setIsEditAdVisible }) => {
         }
     }
 
-    // send ad to DB
+
     const sendAddItemToDB = (obj) => {
         firestore.collection(mainColName).doc(adId).set(obj)
             .then(() => {
@@ -274,39 +298,22 @@ const EditAd = ({ setIsEditAdVisible }) => {
 
     }
 
-    // call when cancel form
+
     const cancelForm = () => {
-        deleteImagesAndFolderFromDB()
+
+        // delete all photo when cance - if is editing then no delete photos
+        !editAdData && deleteImagesAndFolderFromDB()
         setIsEditAdVisible(false)
     }
 
-    const makeAllInputsDefault = () => {
 
-        // adId
-        setAdId(idGenerator())
-
-        // TYPE CATEGORY STATUS
-        setTypeAd(mainCategories[0].id)
-        setCategoryAd('')
-        setStatusAd(statusAdArray[0])
-
-        // PHOTOS
-        setImage([null, null, null, null, null, null, null, null, null, null])
-        setImageURL([null, null, null, null, null, null, null, null, null, null])
-        setSmallImageURL('')
-        setProgress(0)
-        setShowProgress([false, false, false, false, false, false, false, false, false, false])
-
-        // DESCRIPTIONS
-        setTitleAd('')
-        setDescriptionAd('')
-        setPriceAd('')
-        setMeasurementAd('')
-        setLocationAd('')
+    const deleteAd = () => {
+        deleteImagesAndFolderFromDB()
+        firestore.collection(mainColName).doc(adId).delete() //delete document with id from collection
+        setIsEditAdVisible(false)
     }
 
 
-    // delete all images and folder from DB
     const deleteImagesAndFolderFromDB = () => {
         const ref = storage.ref(`images/${adId}`)
         ref.listAll()
@@ -336,20 +343,13 @@ const EditAd = ({ setIsEditAdVisible }) => {
 
             <div className={style.ad__section}>
 
-                {/* type and category */}
+                {/* category and status */}
                 <div className={style.ad__container}>
-
-                    <div className={style.ad__itemContainer}>
-                        <p className={style.ad__itemDesc}>Typ:</p>
-                        <select className={style.ad__itemList} onChange={e => setTypeAd(e.target.value)} value={typeAd}>
-                            {mainCategories.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
-                        </select>
-                    </div>
 
                     <div className={style.ad__itemContainer}>
                         <p className={style.ad__itemDesc}>Kategoria:</p>
                         <select className={style.ad__itemList} onChange={e => setCategoryAd(e.target.value)} value={categoryAd}>
-                            {mainCategories.find(item => item.id === typeAd).categories.map(item => <option key={item.nameDB} value={item.nameDB}>{item.name}</option>)}
+                            {mainCategories.map(item => <option key={item.id} value={item.id}>{`${item.type} - ${item.category}`}</option>)}
                         </select>
                     </div>
 
@@ -426,6 +426,10 @@ const EditAd = ({ setIsEditAdVisible }) => {
                     <button className={`${style.btn} ${style.btnMmargin}`} onClick={cancelForm}>Anuluj</button>
                     <button className={style.btn} onClick={handleReadyAd}>Zapisz</button>
                 </div>
+                {editAdData &&
+                    <div className={style.btnContainer}>
+                        <button className={style.btn} onClick={deleteAd}>Usuń</button>
+                    </div>}
 
             </div>
         </main >
