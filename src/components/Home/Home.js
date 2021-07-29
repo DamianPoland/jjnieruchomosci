@@ -127,7 +127,7 @@ const Home = () => {
                             <li className={style.why__li}>Do każdego klienta podchodzę indywidualnie.</li>
                             <li className={style.why__li}>Mam wieloletnie doświadczenie zarówno w sprzedaży jak i wynajmie nieruchomości.</li>
                         </ul>
-                        <div><Link to='/ads' className="btn">Ogłoszenia</Link></div>
+                        {/* <div><Link to='/ads' className="btn">Ogłoszenia</Link></div> */}
                     </div>
                     <figure className={style.why__figure2}>
                         <img className={style.why__img} src={home__why2} alt="bhp" />
