@@ -101,7 +101,7 @@ const Home = () => {
                         <div className={style.offer__textContainer}>
                             <h1 className="text1">Czym się zajmuję</h1>
                             <div className="line"></div>
-                            <p className="text2">Oferuję usługi pośrednictwa w sprzedaży i zakupie domów, mieszkań i działek. Zajmuję się kompleksową obsługą umów, obsługą prawną, doradztwem oraz bezpieczeństwem transakcji.</p>
+                            <p className="text2">Oferuję usługi pośrednictwa w sprzedaży i zakupie domów, mieszkań i działek. Zajmuję się kompleksową obsługą umów, obsługą prawną oraz bezpieczeństwem transakcji.</p>
                             <div><Link to='/offer' className="btn btnMarginTop">Pełna oferta</Link></div>
                         </div>
                     </div>

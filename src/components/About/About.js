@@ -36,7 +36,7 @@ const About = () => {
                                 <p className="text2"><span className={style.text__bigLeter}>N</span>azywam się Joanna Janiec. Urodziłam się i mieszkałam w Gdańsku, ale od 17 lat mieszkam w Gdyni. W 2006 roku ukończyłam studia magisterskie na Wydziale Pedagogicznym na kierunkach resocjalizacja oraz pedagogika ogólna.</p>
                                 <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją od zawsze było pośrednictwo w obrocie nieruchomościami. Stąd w dążeniu do celu w roku 2008 ukończyłam studia podyplomowe na Wyższej Szkole Gospodarowania Nieruchomościami na Politechnice Gdańskiej i uzyskałam licencję zawodową w zakresie pośrednictwa w obrocie nieruchomościami – nr 8998.</p>
                                 <p className="text2"><span className={style.text__bigLeter}>W</span> trakcie studiów rozpoczęłam pracę w biurze nieruchomości. Swoje doświadczenie w zawodzie buduję od 2006 roku. W tym czasie pośredniczyłam w sprzedaży i zakupie domów, mieszkań i działek. Jednym z wielu sukcesów było podpisanie umowy z firmą deweloperską.</p>
-                                <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją są zagadnienia z pogranicza psychobiologii i fizyki kwantowej, ale także lubię czytać, biegać i zjeść dobrą oryginalna kuchnię.</p>
+                                <p className="text2"><span className={style.text__bigLeter}>M</span>oją pasją są zagadnienia z pogranicza psychobiologii i fizyki kwantowej. Poza tym morsuję, biegam i zawsze znajdę czas na dobrą książkę.</p>
                             </div>
                         </div>
                     </div>
