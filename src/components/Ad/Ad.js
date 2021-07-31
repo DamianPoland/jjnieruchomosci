@@ -64,6 +64,14 @@ const Ad = props => {
     }, [])
 
 
+    const changePhoto = direction => {
+        const photosArray = oneAd.imageURL.filter(i => i !== null)
+        let mainPhotoIndex = photosArray.findIndex(i => i === mainPhoto)
+        mainPhotoIndex = direction === "next" ? mainPhotoIndex + 1 : mainPhotoIndex - 1
+        if (mainPhotoIndex > photosArray.length - 1) { mainPhotoIndex = 0 }
+        if (mainPhotoIndex < 0) { mainPhotoIndex = photosArray.length - 1 }
+        setMainPhoto(photosArray[mainPhotoIndex])
+    }
 
 
 
@@ -93,6 +101,9 @@ const Ad = props => {
 
                                 <figure className={style.photos__figureBig}>
                                     <img className={style.photos__imgBig} src={mainPhoto || PhotoEmpty} onError={(e) => { e.target.onerror = null; e.target.src = PhotoEmpty }} alt="main" />
+                                    <button onClick={() => changePhoto("prev")} className={`${style.photos__arrowContainer} ${style.photos__arrowContainerLeft}`}><span className={`${style.photos__arrow} ${style.photos__arrowLeft}`}></span></button>
+                                    <button onClick={() => changePhoto("next")} className={`${style.photos__arrowContainer} ${style.photos__arrowContainerRight}`}><span className={`${style.photos__arrow} ${style.photos__arrowRight}`}></span></button>
+
                                 </figure>
 
                                 <div className={style.photos__containerSmall}>

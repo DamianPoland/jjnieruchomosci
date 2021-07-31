@@ -22,7 +22,7 @@ const Ads = ({ adsFromDB, isLogIn }) => {
 
 
     // fiter ads to fit clicked main category
-    useEffect(() => setArrayOfAdds(adsFromDB.filter(i => i.categoryAd === mainCategory)), [mainCategory, adsFromDB])
+    useEffect(() => setArrayOfAdds(adsFromDB.filter(i => i.categoryAd === mainCategory).sort().reverse()), [mainCategory, adsFromDB])
 
 
     // call from listItemAd when Ad is edit
@@ -70,7 +70,6 @@ const Ads = ({ adsFromDB, isLogIn }) => {
                                     return (
                                         <div key={item.id} className={`${style.categories__itemContainer} ${(mainCategory === item.id) && style.categories__itemContainerActive}`} onClick={() => setMainCategory(item.id)}>
                                             <div className={style.categories__itemFigure}>
-
                                                 <div className={style.categories__itemSVG}>{item.photo}</div>
                                             </div>
                                             <p className={style.categories__itemDesc}>{item.category}</p>
