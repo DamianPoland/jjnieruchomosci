@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .header {
@@ -59,7 +60,6 @@
     top: 4rem;
     right: -50%;
     background: rgba(var(--dark), 1);
-
     height: calc(100vh - 4rem);
     width: 50%;
     transition: transform .6s ease;
@@ -86,6 +86,15 @@
 
 .activeLink {
     color: rgb(var(--accent));
+}
+
+.navBackgroundMobile {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 50%;
+    height: calc(100vh - 4rem);
+    z-index: 10;
 }
 
 

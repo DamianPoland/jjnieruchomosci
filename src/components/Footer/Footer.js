@@ -25,9 +25,9 @@ const Footer = () => {
                         <p className={style.desc__title}>NAWIGACJA</p>
                         <nav className={style.desc__nav}>
                             <Link to='/home' className={style.desc__link}><i className={style.desc__arrow} />Strona główna</Link>
-                            <Link to='/about' className={style.desc__link}><i className={style.desc__arrow} />O firmie</Link>
+                            <Link to='/about' className={style.desc__link}><i className={style.desc__arrow} />O mnie</Link>
                             <Link to='/offer' className={style.desc__link}><i className={style.desc__arrow} />Oferta</Link>
-                            {/* <Link to='/ads' className={style.desc__link}><i className={style.desc__arrow} />Ogłoszenia</Link> */}
+                            <Link to='/ads' className={style.desc__link}><i className={style.desc__arrow} />Ogłoszenia</Link>
                             <Link to='/contact' className={style.desc__link}><i className={style.desc__arrow} />Kontakt</Link>
                             <Link to='/privacy-policy' className={style.desc__link}><i className={style.desc__arrow} />Polityka prywatności</Link>
                         </nav>

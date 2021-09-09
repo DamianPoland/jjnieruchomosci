@@ -27,13 +27,13 @@ const Nav = props => {
                     <li className={style.listItem}><NavLink to='/home' activeClassName={style.activeLink} className={style.listItemAnchor}>Strona główna</NavLink></li>
                     <li className={style.listItem}><NavLink to='/about' activeClassName={style.activeLink} className={style.listItemAnchor}>O mnie</NavLink></li>
                     <li className={style.listItem}><NavLink to='/offer' activeClassName={style.activeLink} className={style.listItemAnchor}>Oferta</NavLink></li>
-                    {/* <li className={style.listItem}><NavLink to='/ads' activeClassName={style.activeLink} className={style.listItemAnchor}>Ogłoszenia</NavLink></li> */}
+                    <li className={style.listItem}><NavLink to='/ads' activeClassName={style.activeLink} className={style.listItemAnchor}>Ogłoszenia</NavLink></li>
                     <li className={style.listItem}><NavLink to='/contact' activeClassName={style.activeLink} className={style.listItemAnchor}>Kontakt</NavLink></li>
                 </ul>
                 <div onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)} className={`${style.burgerMenu} ${styleMobileButtonBurger}`}>
                     <div className={style.burgerBtn}></div>
                 </div>
-
+                {isOpenMobileMenu && <div className={style.navBackgroundMobile} onClick={() => setIsOpenMobileMenu(false)}></div>}
             </nav>
         </header>
     )
